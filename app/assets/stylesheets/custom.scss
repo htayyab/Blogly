@@ -1,0 +1,23 @@
+/* custom.scss */
+
+/* Custom navbar styles */
+.navbar {
+  background-color: rgb(232, 26, 26) !important; /* Red background */
+}
+
+.navbar .navbar-brand {
+  color: white !important; /* White color for navbar brand */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white !important; /* White color for navbar links */
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: lightgray !important; /* Hover effect */
+}
+
+/* Customizations for the toggler icon (hamburger menu) */
+.navbar .navbar-toggler-icon {
+  background-color: white !important; /* Change the color of the toggler icon */
+}

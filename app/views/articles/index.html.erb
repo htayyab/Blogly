@@ -1,0 +1,68 @@
+<h1>Articles Listing Page</h1>
+
+<style>
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  td {
+    vertical-align: middle;
+  }
+  
+  td:nth-child(2) { /* Adds spacing between Title & Description */
+    padding-left: 20px;
+  }
+  
+  /* Updated Actions Column */
+  .actions {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    padding: 10px; /* Padding inside actions column */
+    margin: 5px 0; /* Margin for top and bottom */
+  }
+  
+  .actions form {
+    display: inline;
+  }
+  
+ 
+
+</style>
+
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th colspan="3">Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<% @article.each do |article| %>
+<tr>
+<td><%= article.title %></td>
+<td><%= article.description %></td>
+<td><%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
+<td><%= button_to "Show", article_path(article), method: :get %></td>
+<td><%= button_to "Edit", edit_article_path(article), method: :get %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<p>
+<%= button_to "Create New Article", new_article_path, method: :get %>
+</p>
